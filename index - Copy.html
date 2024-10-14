@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga for Health and Wellness</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #DFF2E3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #A8D5BA;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #8BB397;
+            transition: all 0.5s ease;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #356D58;
+            transition: color 0.3s ease-in-out;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        h2 {
+            color: #356D58;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #A8D5BA;
+            opacity: 0;
+            animation: fadeInImage 1.5s ease-in-out forwards;
+        }
+
+        footer {
+            background-color: #A8D5BA;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            border-top: 2px solid #8BB397;
+        }
+
+        .contact-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-details img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-details img:hover {
+            transform: scale(1.1);
+        }
+
+        .border {
+            border: 2px solid #8BB397;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .transition-text:hover {
+            color: #1F4C39;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="transition-text">Yoga: For Mental Health and Wellness</h1>
+    </header>
+
+    <div class="content">
+        <section class="info-section">
+            <h2 class="transition-text">Benefits of Yoga</h2>
+            <p>Improves Strength, Balance, and Flexibility: Slow movements and deep breathing enhance blood flow and warm up muscles, while holding poses builds strength.</p>
+            <p>Back Pain Relief: Yoga is recommended as a treatment for chronic lower back pain, improving mobility and reducing discomfort.</p>
+            <p>Eases Arthritis Symptoms: Gentle yoga alleviates pain in swollen joints, as shown in studies.</p>
+            <p>Benefits Heart Health: Yoga reduces stress and inflammation, aiding in heart disease prevention and management of high blood pressure and weight.</p>
+            <p>Improves Sleep Quality: A consistent bedtime yoga routine prepares the body for better sleep.</p>
+            <p>Increases Energy and Improves Mood: Regular practice boosts mental and physical energy, enhances alertness, and reduces negativity.</p>
+            <p>Helps Manage Stress: Yoga supports mindfulness, stress management, mental health, and overall well-being.</p>
+            <p>Builds a Supportive Community: Yoga classes foster social connections, reducing loneliness.</p>
+            <p>Encourages Self-Care: Practicing yoga promotes mindful habits and self-care routines.</p>
+            <img src="yoga1.jpeg" alt="Yoga Pose 1" class="border">
+            <p>Practicing yoga at home offers convenience, flexibility, and a comfortable environment, allowing you to tailor your sessions to your needs and schedule without the cost or pressure of a studio.</p>
+            <img src="yoga2.jpeg" alt="Yoga Pose 2" class="border">
+        </section>
+
+        <section class="contact-section">
+            <h2 class="transition-text">Contact Us</h2>
+            <div class="contact-details">
+                <a href="https://instagram.com/yoga_vibes_official" target="_blank">
+                    <img src="insta.png" alt="Instagram Logo">
+                </a>
+                <a href="mailto:yoga.vibes.official@gmail.com" class="transition-text">yoga.vibes.official@gmail.com</a>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <h2 class="transition-text">Leave a Comment</h2>
+            <form id="commentForm">
+                <label for="username">Name:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="comment">Comment:</label><br>
+                <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="commentsContainer"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Thank you for visiting! - Zeal</p>
+        <p>14th October 2024</p>
+    </footer>
+
+    <script>
+        // Comment functionality
+        document.getElementById("commentForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const comment = document.getElementById("comment").value;
+            const commentsContainer = document.getElementById("commentsContainer");
+
+            const commentElement = document.createElement("div");
+            commentElement.classList.add("border");
+            commentElement.style.margin = "10px 0";
+            commentElement.innerHTML = `<strong>${username}</strong>: <p>${comment}</p>`;
+            commentsContainer.appendChild(commentElement);
+
+            // Clear form fields after submission
+            document.getElementById("username").value = "";
+            document.getElementById("comment").value = "";
+        });
+    </script>
+</body>
+
+</html>
