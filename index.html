@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga: For Mental Health</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4fffa; /* A soft, minty green */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            transition: color 0.3s ease;
+        }
+        h1:hover {
+            color: #2980b9;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: translateY(-2px);
+        }
+        .comments {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .comment-input {
+            margin-top: 10px;
+        }
+        .comment-input input, .comment-input textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .comment-input button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .comment-input button:hover {
+            background-color: #3498db;
+        }
+        .comment {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Yoga: For Mental Health</h1>
+    <ul>
+        <li>Improves Strength, Balance, and Flexibility: Slow movements and deep breathing enhance blood flow and warm up muscles, while holding poses builds strength.</li>
+        <li>Back Pain Relief: Yoga is recommended as a treatment for chronic lower back pain, improving mobility and reducing discomfort.</li>
+        <li>Eases Arthritis Symptoms: Gentle yoga alleviates pain in swollen joints, as shown in studies.</li>
+        <li>Benefits Heart Health: Yoga reduces stress and inflammation, aiding in heart disease prevention and management of high blood pressure and weight.</li>
+        <li>Improves Sleep Quality: A consistent bedtime yoga routine prepares the body for better sleep.</li>
+        <li>Increases Energy and Improves Mood: Regular practice boosts mental and physical energy, enhances alertness, and reduces negativity.</li>
+        <li>Helps Manage Stress: Yoga supports mindfulness, stress management, mental health, and overall well-being.</li>
+        <li>Builds a Supportive Community: Yoga classes foster social connections, reducing loneliness.</li>
+        <li>Encourages Self-Care: Practicing yoga promotes mindful habits and self-care routines.</li>
+    </ul>
+    
+    <img src="yoga1.jpeg" alt="Yoga Image" style="width: 50%; border-radius: 8px; display: block; margin: 20px auto;">
+
+    <h2>Practicing Yoga at Home</h2>
+    <p>Practicing yoga at home offers convenience, flexibility, and a comfortable environment, allowing you to tailor your sessions to your needs and schedule without the cost or pressure of a studio. It provides privacy, deepens your practice, and supports mental health by creating a personalized and peaceful space for consistent, mindful routines.</p>
+    
+    <img src="yoga2.jpeg" alt="Yoga at Home" style="width: 50%; border-radius: 8px; display: block; margin: 20px auto;">
+
+    <div class="comments">
+        <h2>Comments</h2>
+        <div id="commentList"></div>
+        
+        <div class="comment-input">
+            <input type="text" id="name" placeholder="Your name" required>
+            <textarea id="comment" rows="4" placeholder="Your comment..." required></textarea>
+            <button onclick="addComment()">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Load comments from local storage
+    window.onload = function() {
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+        comments.forEach(comment => {
+            displayComment(comment);
+        });
+    };
+
+    function addComment() {
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+        
+        if (name && comment) {
+            const commentData = { name, comment };
+            displayComment(commentData);
+            saveComment(commentData);
+            document.getElementById('name').value = '';
+            document.getElementById('comment').value = '';
+        } else {
+            alert('Please fill in both fields.');
+        }
+    }
+
+    function displayComment({ name, comment }) {
+        const commentList = document.getElementById('commentList');
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.innerHTML = `<strong>${name}</strong>: ${comment}`;
+        commentList.appendChild(commentDiv);
+    }
+
+    function saveComment(comment) {
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+        comments.push(comment);
+        localStorage.setItem('comments', JSON.stringify(comments));
+    }
+</script>
+
+<footer style="text-align: center; margin-top: 20px;">
+    <p>Thank you! - Zeal</p>
+    <p>Date: <span id="date"></span></p>
+</footer>
+
+<script>
+    // Display today's date
+    document.getElementById('date').innerText = new Date().toLocaleDateString();
+</script>
+
+</body>
+</html>
